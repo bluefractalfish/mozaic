@@ -7,7 +7,6 @@
   --easing: cubic-bezier(.2,.3,.5,1); 
 
 
-<<<<<<< HEAD
   --accent-color1: #D9A9CC;
   --accent-color2: #43754A;
   
@@ -17,46 +16,24 @@
 }
 
 a { text-decoration: none; padding: 10px; color: var(--accent-color1);}
-=======
-  --accent-color: pink;
-  
-  --white: #eaeaea;
-  --header-h: 10vh;
 
-}
 
-a { text-decoration: none; color: var(--white);}
->>>>>>> mozaic/main
-
-body { margin: 20px; min-height: 100vh;}
+body { margin: 20px; min-width: 100vh; min-height: 100vh;}
 
 .box{
-<<<<<<< HEAD
   width: 75vw;
   height:fit-content;
   border:3px solid var(--accent-color1);
   border-radius: 5px;
   padding: 10px;
   margin: 1px;
-=======
-  position: relative;
-  width: fit-content;
-  height:fit-content;
-  border:1px solid var(--white);
-  padding: 10px;
-  margin:20px;
-  display:flex;
->>>>>>> mozaic/main
   white-space: normal;
   word-break: normal;
   cursor: pointer;
 }
 
 .box .content{
-<<<<<<< HEAD
   color: var(--accent-color1);
-=======
->>>>>>> mozaic/main
   overflow: hidden;
   text-align: left;
 }
@@ -74,31 +51,17 @@ body { margin: 20px; min-height: 100vh;}
 .corner[pos="bottom-left"] {bottom: -19px; left: -10px;}
 .corner[pos="bottom-right"] {bottom: -19px; right: -10px;} 
 
-<<<<<<< HEAD
 .body,.foot,.page{
   font-family: "agave";
-  display:grid;
+  display:fixed;
   position: absolute;
   place-items:center;
   color: var(--accent-color1);
   background-color: var(--accent-color2);
-=======
-.body,.head,.foot,.page{
-  font-family: "agave";
-  display:grid;
-  place-items:center;
-  color: var(--white);
-  background-color: var(--accent-color);
->>>>>>> mozaic/main
-}
 
 :where(.head-font,.foot-font,.box,l,.path,.corner){
   transition: all var(--t-med) var(--easing);
   color: var(--white);
-<<<<<<< HEAD
-=======
-  background-color: var(--accent-color);
->>>>>>> mozaic/main
 }
 
 .foot {
@@ -111,11 +74,8 @@ body { margin: 20px; min-height: 100vh;}
   text-decoration: none;
   cursor: pointer;
   font-weight: bold;  
-<<<<<<< HEAD
   margin: 10px;
   padding: 10px;
-=======
->>>>>>> mozaic/main
 }
 
 h1 {
@@ -132,7 +92,6 @@ h1 {
 }
 
 .head-font {
-<<<<<<< HEAD
   font-family: "believe";
   color: var(--accent-color1);
   display: inline-grid;
@@ -149,75 +108,10 @@ h1 {
   color: var(--accent-color1);
   /*transition: all var(--t-med) var(--easing);*/
 }
-=======
-  display: inline-grid;
-  position: relative;
-  font-size: 14pt;
-  grid-template-columns: 1ch auto 2ch;
-  align-items: center;
-  column-gap: 0;
-  text-decoration: none;
-  padding:2px;
-  margin: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  --fish-t: 0;
-}
-
-.head-font::before{
-  content:"< ";
-  grid-column: 1;
-}
-
-.head-font::after{
-  content:" ><";
-  grid-column: 3;
-}
-
-.head-font:hover{
-  column-gap: 2rem;
-  padding: 2px 10px; 
-  color: var(--accent-color);
-  background-color: var(--accent-color);
-  /*transition: all var(--t-med) var(--easing);*/
-}
-.head-font:hover::before{
-  transform: translateX(-3px);
-}
-.head-font:hover::after{
-  transform: translateX(3px);
-}
-.head-font.is-fish{
-  color: transparent;
-  background-color: var(--accent-color);
-}
-.head-font.is-fish::before{
-    animation: left-bracket-in 1s cubic-bezier(.2,.9,.3,1) forwards;
-    color: var(--white);
-}
-.head-font.is-fish::after{
-    animation: right-bracket-in 1s cubic-bezier(.2,.9,.3,1) forwards;
-    color: var(--white);
-}
-
-@keyframes left-bracket-in {
-  from { transform: translateX(0); }
-  to   { transform: translateX(calc(3em*(var(--fish-t)))); }
-}
-
-@keyframes right-bracket-in {
-  from { transform: translateX(0); }
-  to   { transform: translateX(calc(-3em*(var(--fish-t)))); }
-}
->>>>>>> mozaic/main
 
 l {
   position: relative;
   font-weight: bold;
-<<<<<<< HEAD
-=======
-  color: var(--white);
->>>>>>> mozaic/main
   text-decoration: none;
   display: inline-block;
   padding: 1px;
@@ -227,11 +121,7 @@ l {
 l:hover{
   letter-spacing: .05rem;
   background-color: #ff5700;
-<<<<<<< HEAD
   color: var(--accent-color1);
-=======
-  color: var(--accent-color);
->>>>>>> mozaic/main
 }
 
 l::before,
@@ -260,53 +150,10 @@ l:hover::after{
 
 .page{
   margin-top: var(--header-h);
-<<<<<<< HEAD
   padding-top: 5px;
   height: 100vh;
   width: 100vw;
-=======
-  padding-top: 12px;
->>>>>>> mozaic/main
 }
 
 
-
-#posts {
-  max-width: 65ch;
-  margin: auto;
-  padding: 3rem 1.5rem;
-
-  display: grid;
-  gap: 4rem;
-}
-
-/* Each written piece */
-#posts words {
-  padding-bottom: 3rem;
-  border-bottom: 1px solid #333;
-}
-
-/* Headings from markdown */
-#posts h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* Paragraphs */
-#posts p {
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-/* Lists */
-#posts ul {
-  padding-left: 1.2rem;
-}
-
-/* Code blocks */
-#posts pre {
-  background: #111;
-  padding: 1rem;
-  overflow-x: auto;
-}
 
