@@ -7,31 +7,32 @@
   --easing: cubic-bezier(.2,.3,.5,1); 
 
 
-  --accent-color: pink;
+  --accent-color1: #D9A9CC;
+  --accent-color2: #43754A;
   
   --white: #eaeaea;
-  --header-h: 10vh;
+  --header-h: 0vh;
 
 }
 
-a { text-decoration: none; color: var(--white);}
+a { text-decoration: none; padding: 10px; color: var(--accent-color1);}
 
 body { margin: 20px; min-height: 100vh;}
 
 .box{
-  position: relative;
-  width: fit-content;
+  width: 75vw;
   height:fit-content;
-  border:1px solid var(--white);
+  border:3px solid var(--accent-color1);
+  border-radius: 5px;
   padding: 10px;
-  margin:20px;
-  display:flex;
+  margin: 1px;
   white-space: normal;
   word-break: normal;
   cursor: pointer;
 }
 
 .box .content{
+  color: var(--accent-color1);
   overflow: hidden;
   text-align: left;
 }
@@ -49,18 +50,18 @@ body { margin: 20px; min-height: 100vh;}
 .corner[pos="bottom-left"] {bottom: -19px; left: -10px;}
 .corner[pos="bottom-right"] {bottom: -19px; right: -10px;} 
 
-.body,.head,.foot,.page{
+.body,.foot,.page{
   font-family: "agave";
   display:grid;
+  position: absolute;
   place-items:center;
-  color: var(--white);
-  background-color: var(--accent-color);
+  color: var(--accent-color1);
+  background-color: var(--accent-color2);
 }
 
 :where(.head-font,.foot-font,.box,l,.path,.corner){
   transition: all var(--t-med) var(--easing);
   color: var(--white);
-  background-color: var(--accent-color);
 }
 
 .foot {
@@ -73,6 +74,8 @@ body { margin: 20px; min-height: 100vh;}
   text-decoration: none;
   cursor: pointer;
   font-weight: bold;  
+  margin: 10px;
+  padding: 10px;
 }
 
 h1 {
@@ -89,70 +92,26 @@ h1 {
 }
 
 .head-font {
+  font-family: "believe";
+  color: var(--accent-color1);
   display: inline-grid;
   position: relative;
-  font-size: 14pt;
-  grid-template-columns: 1ch auto 2ch;
+  font-size: 20pt;
   align-items: center;
-  column-gap: 0;
   text-decoration: none;
   padding:2px;
   margin: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  --fish-t: 0;
 }
-
-.head-font::before{
-  content:"< ";
-  grid-column: 1;
-}
-
-.head-font::after{
-  content:" ><";
-  grid-column: 3;
-}
-
 .head-font:hover{
   column-gap: 2rem;
   padding: 2px 10px; 
-  color: var(--accent-color);
-  background-color: var(--accent-color);
+  color: var(--accent-color1);
   /*transition: all var(--t-med) var(--easing);*/
-}
-.head-font:hover::before{
-  transform: translateX(-3px);
-}
-.head-font:hover::after{
-  transform: translateX(3px);
-}
-.head-font.is-fish{
-  color: transparent;
-  background-color: var(--accent-color);
-}
-.head-font.is-fish::before{
-    animation: left-bracket-in 1s cubic-bezier(.2,.9,.3,1) forwards;
-    color: var(--white);
-}
-.head-font.is-fish::after{
-    animation: right-bracket-in 1s cubic-bezier(.2,.9,.3,1) forwards;
-    color: var(--white);
-}
-
-@keyframes left-bracket-in {
-  from { transform: translateX(0); }
-  to   { transform: translateX(calc(3em*(var(--fish-t)))); }
-}
-
-@keyframes right-bracket-in {
-  from { transform: translateX(0); }
-  to   { transform: translateX(calc(-3em*(var(--fish-t)))); }
 }
 
 l {
   position: relative;
   font-weight: bold;
-  color: var(--white);
   text-decoration: none;
   display: inline-block;
   padding: 1px;
@@ -162,7 +121,7 @@ l {
 l:hover{
   letter-spacing: .05rem;
   background-color: #ff5700;
-  color: var(--accent-color);
+  color: var(--accent-color1);
 }
 
 l::before,
@@ -191,7 +150,9 @@ l:hover::after{
 
 .page{
   margin-top: var(--header-h);
-  padding-top: 12px;
+  padding-top: 5px;
+  height: 100vh;
+  width: 100vw;
 }
 
 
