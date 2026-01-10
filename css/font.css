@@ -1,8 +1,9 @@
 
-/* agave regular */
 @font-face{
   font-family:"believe";
   src:url('believe.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 /* agave regular */
 @font-face{
