@@ -1,1 +1,237 @@
 
+:root {
+  /*animation values*/
+  --t-fast: 0.5s;
+  --t-med: 0.8s;
+  --t-slow: 1s;
+  --easing: cubic-bezier(.2,.3,.5,1); 
+
+
+  --accent-color: pink;
+  
+  --white: #eaeaea;
+  --header-h: 10vh;
+
+}
+
+a { text-decoration: none; color: var(--white);}
+
+body { margin: 20px; min-height: 100vh;}
+
+.box{
+  position: relative;
+  width: fit-content;
+  height:fit-content;
+  border:1px solid var(--white);
+  padding: 10px;
+  margin:20px;
+  display:flex;
+  white-space: normal;
+  word-break: normal;
+  cursor: pointer;
+}
+
+.box .content{
+  overflow: hidden;
+  text-align: left;
+}
+
+.corner {
+  position: absolute;
+  font-size: 13px;
+  font-weight: bold;
+  color: #eaeaea
+  padding: 6px 6px;
+}
+
+.corner[pos="top-left"] {top: -19px; left:-10px;  }
+.corner[pos="top-right"] {top: -19px; right:-10px;}
+.corner[pos="bottom-left"] {bottom: -19px; left: -10px;}
+.corner[pos="bottom-right"] {bottom: -19px; right: -10px;} 
+
+.body,.head,.foot,.page{
+  font-family: "agave";
+  display:grid;
+  place-items:center;
+  color: var(--white);
+  background-color: var(--accent-color);
+}
+
+:where(.head-font,.foot-font,.box,l,.path,.corner){
+  transition: all var(--t-med) var(--easing);
+  color: var(--white);
+  background-color: var(--accent-color);
+}
+
+.foot {
+  position:fixed;
+  inset:  90vh 0px 0px 0px;
+  z-index: 1000;
+}
+
+.foot-font {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;  
+}
+
+h1 {
+  margin-top:0;
+  margin-bottom:0;
+}
+
+.head {
+  position: fixed;
+  padding-top: 2px;
+  inset: 0px  2px 2px;
+  height: var(--header-h);
+  z-index: 1000;
+}
+
+.head-font {
+  display: inline-grid;
+  position: relative;
+  font-size: 14pt;
+  grid-template-columns: 1ch auto 2ch;
+  align-items: center;
+  column-gap: 0;
+  text-decoration: none;
+  padding:2px;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  --fish-t: 0;
+}
+
+.head-font::before{
+  content:"< ";
+  grid-column: 1;
+}
+
+.head-font::after{
+  content:" ><";
+  grid-column: 3;
+}
+
+.head-font:hover{
+  column-gap: 2rem;
+  padding: 2px 10px; 
+  color: var(--accent-color);
+  background-color: var(--accent-color);
+  /*transition: all var(--t-med) var(--easing);*/
+}
+.head-font:hover::before{
+  transform: translateX(-3px);
+}
+.head-font:hover::after{
+  transform: translateX(3px);
+}
+.head-font.is-fish{
+  color: transparent;
+  background-color: var(--accent-color);
+}
+.head-font.is-fish::before{
+    animation: left-bracket-in 1s cubic-bezier(.2,.9,.3,1) forwards;
+    color: var(--white);
+}
+.head-font.is-fish::after{
+    animation: right-bracket-in 1s cubic-bezier(.2,.9,.3,1) forwards;
+    color: var(--white);
+}
+
+@keyframes left-bracket-in {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(3em*(var(--fish-t)))); }
+}
+
+@keyframes right-bracket-in {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-3em*(var(--fish-t)))); }
+}
+
+l {
+  position: relative;
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
+  display: inline-block;
+  padding: 1px;
+  cursor: pointer;
+  margin-inline: 1px;
+}
+l:hover{
+  letter-spacing: .05rem;
+  background-color: #ff5700;
+  color: var(--accent-color);
+}
+
+l::before,
+l::after{
+  content:"";
+  position: relative;
+}
+
+l::before{
+  content:"";
+  margin-right:1px;
+}
+
+l::after {
+  content:"";
+  margin-left:1px;
+}
+l:hover::before{
+  content:"";
+  margin-right:1rem;
+}
+l:hover::after{
+  content:"";
+  margin-left:1rem;
+}
+
+.page{
+  margin-top: var(--header-h);
+  padding-top: 12px;
+}
+
+
+
+#posts {
+  max-width: 65ch;
+  margin: auto;
+  padding: 3rem 1.5rem;
+
+  display: grid;
+  gap: 4rem;
+}
+
+/* Each written piece */
+#posts words {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #333;
+}
+
+/* Headings from markdown */
+#posts h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+#posts p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Lists */
+#posts ul {
+  padding-left: 1.2rem;
+}
+
+/* Code blocks */
+#posts pre {
+  background: #111;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
