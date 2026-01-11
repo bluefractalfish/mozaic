@@ -23,6 +23,7 @@ body {
   min-width: 100vh; 
   min-height: 100vh;
   background-color: var(--accent-color2)
+  a
 }
 
 
@@ -32,7 +33,7 @@ body {
   border:3px solid var(--accent-color1);
   border-radius: 5px;
   padding: 10px;
-  margin: 1px;
+  margin: 10px;
   white-space: normal;
   word-break: normal;
   cursor: pointer;
@@ -59,8 +60,7 @@ body {
 
 .head,.body,.foot,.page{
   font-family: "agave";
-  display:fixed;
-  position: absolute;
+  display:grid;
   place-items:center;
   color: var(--accent-color1);
   background-color: var(--accent-color2);
