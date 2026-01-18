@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mozaic</title>
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="head">
+    <h>MOSAIC</h>
+  </header>
+<header class="page">
+  <div class="box">
+    <div class="content">
+      <strong>Why Mozaic?</strong> <br>  Mozaic therapies is a place where all the “broken” pieces are honored, contemplated and reshaped to fit into a beautiful new you. It is a process of breaking down current patterns, beliefs and processes and determining which serve you, which are no longer useful and which may require some changes. By repositioning your life into something that works better and is more adaptive, you have the opportunity to create beauty.
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="box">
+    <div class="content">
+      Mozaic therapies was founded by Kim Gershon a licensed clinician with training in both social work and psychology. Kim has used integrated approaches to working with adolescents, adults, families, groups  and couples. Kim is a licensed social worker in both MA and CO and is currently engaged in plant medicine certification through the Integrative Psychiatric Institute. Kim currently holds a facilitator training license in Plant Medicine through CO.
+ 
+ 
+I have enjoyed working therapeutically with various populations for over 25 years. I am amazed by the growth that can happen when you take the initiative to create positive change in your relationships and in your emotional self. I feel honored to be part of the process of growth, change and trust created in a therapeutic relationship. I recognize that the decision to begin the therapeutic journey can be a difficult one and aim to create a comfortable environment and relationship to help foster personal transformation.
+ 
+I am excited to introduce new modalities including plant medicine, Ketamine and other intensives. Through extensive training and experiential opportunities, I have learned that adding mind expanding medicines to the therapeutic process can break down defenses and barriers to allow for more profound and rapid growth. Using these medicines can offer the opportunity to illuminate patterns, belief systems and narratives that no longer serve you. Further, the use of these medicines can increase neuroplasticity in our brains which helps to improve our ability to make changes in our thought process and behaviors. 
+
+    </div>
+  </div>
+    <div class="foot">
+      <div class="foot-font">
+        <a href="https://www.psychologytoday.com/us/therapists/kim-gershon-boulder-co/409637"> psychologytoday </a>  
+        <a href=index.html> reading </a>
+        <a href=index.html> about </a>
+        <a href=index.html> contact  </a>
+      </div>
+    </div>
+</header>
+</body>
+</html>

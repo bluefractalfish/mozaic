@@ -1,43 +1,210 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>mozaic</title>
-  <link rel="stylesheet" href="css/font.css">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mozaic Integrative Therapies</title>
+  <meta name="description" content="Mozaic Integrative Therapies" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-  <header class="head">
-    <h>MOSAIC</h>
-  </header>
-<header class="page">
-  <div class="box">
-    <div class="content">
-      <strong>Why Mozaic?</strong> <br>  Mozaic therapies is a place where all the “broken” pieces are honored, contemplated and reshaped to fit into a beautiful new you. It is a process of breaking down current patterns, beliefs and processes and determining which serve you, which are no longer useful and which may require some changes. By repositioning your life into something that works better and is more adaptive, you have the opportunity to create beauty.
-    </div>
-  </div>
-  <br>
-  <br>
-  <div class="box">
-    <div class="content">
-      Mozaic therapies was founded by Kim Gershon a licensed clinician with training in both social work and psychology. Kim has used integrated approaches to working with adolescents, adults, families, groups  and couples. Kim is a licensed social worker in both MA and CO and is currently engaged in plant medicine certification through the Integrative Psychiatric Institute. Kim currently holds a facilitator training license in Plant Medicine through CO.
- 
- 
-I have enjoyed working therapeutically with various populations for over 25 years. I am amazed by the growth that can happen when you take the initiative to create positive change in your relationships and in your emotional self. I feel honored to be part of the process of growth, change and trust created in a therapeutic relationship. I recognize that the decision to begin the therapeutic journey can be a difficult one and aim to create a comfortable environment and relationship to help foster personal transformation.
- 
-I am excited to introduce new modalities including plant medicine, Ketamine and other intensives. Through extensive training and experiential opportunities, I have learned that adding mind expanding medicines to the therapeutic process can break down defenses and barriers to allow for more profound and rapid growth. Using these medicines can offer the opportunity to illuminate patterns, belief systems and narratives that no longer serve you. Further, the use of these medicines can increase neuroplasticity in our brains which helps to improve our ability to make changes in our thought process and behaviors. 
 
-    </div>
+<body>
+  <!-- Soft background layers -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__grain"></div>
+    <div class="bg__blob bg__blob--a"></div>
+    <div class="bg__blob bg__blob--b"></div>
+    <div class="bg__blob bg__blob--c"></div>
   </div>
-    <div class="foot">
-      <div class="foot-font">
-        <a href="https://www.psychologytoday.com/us/therapists/kim-gershon-boulder-co/409637"> psychologytoday </a>  
-        <a href=index.html> reading </a>
-        <a href=index.html> about </a>
-        <a href=index.html> contact  </a>
+
+  <a class="skip" href="#main">skip to content</a>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="#">
+        <span class="brand__mark" aria-hidden="true">◎</span>
+        <span class="brand__name">mozaic integrative therapies</span>
+      </a>
+
+      <input class="nav__toggle" type="checkbox" id="navToggle" />
+      <label class="nav__button" for="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <div class="nav__links">
+        <a href="#offerings">about</a>
+        <a href="#offerings">offerings</a>
+        <a href="#space">psychologytoday</a>
+        <a href="#team">reading</a>
+        <a href="#schedule">schedule</a>
+        <a class="btn btn--small" href="#contact">contact</a>
       </div>
-    </div>
-</header>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <h1 class="h1">
+            where the pieces come together <span class="accent">to form something beautiful</span>.
+          </h1>
+          <strobg class="lead">
+           <strong>Why Mozaic?</strong> <br> mozaic therapies is a place where all the “broken” pieces are honored, contemplated and reshaped to fit into a beautiful new you. It is a process of breaking down current patterns, beliefs and processes and determining which serve you, which are no longer useful and which may require some changes. By repositioning your life into something that works better and is more adaptive, you have the opportunity to create beauty. 
+
+          <div class="hero__cta">
+            <a class="btn" href="#offerings">Explore offerings</a>
+            <a class="btn btn--ghost" href="#contact">Book a visit</a>
+          </div>
+
+          <div class="hero__meta">
+            <div class="meta">
+              <span class="meta__k">Location</span>
+              <span class="meta__v">Your City</span>
+            </div>
+            <div class="meta">
+              <span class="meta__k">Hours</span>
+              <span class="meta__v">Mon–Sat • 9–6</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card" aria-label="Featured">
+          <div class="card card--hero">
+            <div class="card__header">
+              <div class="badge">New</div>
+              <div class="chip">session one</div>
+            </div>
+            <h2 class="h2">first session</h2>
+            <p class="muted">
+              A 3-day intensive 
+            </p>
+
+            <div class="card__list">
+              <div class="item">
+                <span class="dot" aria-hidden="true"></span>
+                <span>Small groups (8–12)</span>
+              </div>
+            </div>
+
+            <div class="card__actions">
+              <a class="btn btn--small" href="#schedule">See dates</a>
+              <a class="link" href="#contact">Ask a question →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- OFFERINGS -->
+    <section class="section" id="offerings">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">offerings</h2>
+          <p class="muted">multiple modalities on offer</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <h3 class="h3">psylocibin</h3>
+            <p class="muted">details about mushroom therapy<>
+            <ul class="list">
+              <li>60 / 90 minutes</li>
+              <li>restorative focus</li>
+              <li>trauma-informed</li>
+            </ul>
+            <a class="link" href="#contact">inquire</a>
+          </article>
+
+          <article class="card">
+            <h3 class="h3">ketamine</h3>
+            <p class="muted">details about ketamine</p>
+            <ul class="list">
+              <li>1:1 or groups</li>
+              <li>beginner-friendly</li>
+              <li>integrative</li>
+            </ul>
+            <a class="link" href="#schedule">schedule incoming </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container two">
+        <div class="two__copy">
+          <h2 class="h2">contact</h2>
+          <p class="lead">Say hi, ask questions, or request a booking.</p>
+          <p class="muted">
+            This is a front-end form UI. we can connect it to Formspree, Netlify Forms,
+            or a custom backend later.
+          </p>
+
+          <div class="contact__cards">
+            <div class="mini__card">
+              <span class="mini__k">Email</span>
+              <span class="mini__v">hello@mozaic.center</span>
+            </div>
+            <div class="mini__card">
+              <span class="mini__k">Address</span>
+              <span class="mini__v">Your address</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="two__media">
+          <form class="card form" action="#" method="post">
+            <label class="field">
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" placeholder="Your name" />
+            </label>
+
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" placeholder="you@example.com" />
+            </label>
+
+            <label class="field">
+              <span>What are you looking for?</span>
+              <select name="topic">
+                <option>General question</option>
+                <option>Book a session</option>
+                <option>Classes / workshops</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>message</span>
+              <textarea name="message" rows="5" placeholder="How can we support you?"></textarea>
+            </label>
+            <p class="tiny muted">You can wire this to a form service later.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <div class="brand brand--footer">
+            <span class="brand__mark" aria-hidden="true">◎</span>
+            <span class="brand__name">mozaic integrative therapies</span>
+          </div>
+          <p class="muted tiny">© <span id="year"></span> mozaic integrative therapies llc. All rights reserved.</p>
+        </div>
+
+        <div class="footer__links">
+          <a href="#offerings">offerings</a>
+          <a href="#contact">contact</a>
+        </div>
+      </div>
+
+    </footer>
+  </main>
 </body>
 </html>
+
