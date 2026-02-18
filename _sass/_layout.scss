@@ -1,0 +1,52 @@
+@import "variables";
+
+/* Utility container pattern */
+@mixin container {
+  width: min(#{$container-max}, calc(100% - (#{$gutter} * 2)));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header / topbar */
+.topbar {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 24px;
+  margin-top: $gutter;
+
+  @include container;
+}
+
+/* Main wrap */
+.wrap {
+  @include container;
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  display: grid;
+  gap: 20px;
+}
+
+/* Nav / logo layout bits */
+.logo {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: white;
+}
+
+.nav {
+  a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: $muted;
+
+    &:hover { color: white; }
+  }
+}
+

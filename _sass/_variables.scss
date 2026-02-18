@@ -1,4 +1,29 @@
-$primary-color: #007acc;
-$background: #222;
-$text-color: #fff;
+// ===== Theme colors =====
+$bg1: #6d5efc;
+$bg2: #03afff;
+$bg3: #ffacfc;
+$bg4: #ffee11;
+
+// ===== Glass tokens =====
+$glass-1: rgba(255, 255, 255, 0.10);
+$glass-2: rgba(255, 255, 255, 0.06);
+$stroke:  rgba(255, 255, 255, 0.22);
+
+$text:  rgba(255, 255, 255, 0.92);
+$muted: rgba(255, 255, 255, 0.70);
+
+$shadow: 0 20px 60px rgba(0, 0, 0, 0.30);
+$blur: 18px;
+$radius: 18px;
+
+// ===== Layout tokens =====
+$container-max: 1000px;
+$gutter: 20px;
+$font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+// ===== Motion =====
+$breathe-duration: 14s;
+$float-duration-1: 18s;
+$float-duration-2: 22s;
+$float-duration-3: 26s;
 

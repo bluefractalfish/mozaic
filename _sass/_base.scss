@@ -1,20 +1,89 @@
+@import "variables";
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
 body {
-  font-family: system-ui, -apple-system, sans-serif;
   margin: 0;
-  background: $background;
-  color: $text-color;
+  color: $text;
+  font-family: $font-sans;
+  overflow-x: hidden;
 }
 
-a {
-  color: $primary-color;
-  text-decoration: none;
+.logo{
+  font-family: "brandis";
+}
 
-  &:hover {
-    color: $text-color;
-    
+/* ===== Breathing Gradient Background ===== */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    radial-gradient(1200px 800px at 10% 20%, rgba(255, 60, 172, .6), transparent 60%),
+    radial-gradient(1000px 700px at 90% 30%, rgba(0, 212, 255, .6), transparent 60%),
+    radial-gradient(1000px 700px at 40% 90%, rgba(109, 94, 252, .6), transparent 60%),
+    linear-gradient(120deg, $bg1, $bg2, $bg3, $bg4);
+
+  background-size: 140% 140%;
+  animation: breathe $breathe-duration ease-in-out infinite;
+  filter: saturate(1.2);
+}
+
+@keyframes breathe {
+  0%   { transform: scale(1);    background-position: 0% 50%; }
+  50%  { transform: scale(1.06); background-position: 100% 50%; }
+  100% { transform: scale(1);    background-position: 0% 50%; }
+}
+
+/* ===== Floating Blobs ===== */
+.blobs {
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  filter: blur(40px);
+  opacity: .6;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  animation: float $float-duration-1 ease-in-out infinite;
+
+  &:nth-child(1) {
+    left: 10%;
+    top: 10%;
+    background: rgba(255, 60, 172, .35);
+  }
+
+  &:nth-child(2) {
+    left: 60%;
+    top: 5%;
+    background: rgba(0, 212, 255, .35);
+    animation-duration: $float-duration-2;
+  }
+
+  &:nth-child(3) {
+    left: 30%;
+    top: 60%;
+    background: rgba(109, 94, 252, .35);
+    animation-duration: $float-duration-3;
   }
 }
 
-.logo {
-  font-family: "brandis", sans-serif;
+@keyframes float {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(80px, 60px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
 }
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .bg, .blob { animation: none !important; }
+}
+
