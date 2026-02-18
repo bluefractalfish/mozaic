@@ -1,0 +1,15 @@
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  background: $background;
+  color: $text-color;
+}
+
+a {
+  color: $primary-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
