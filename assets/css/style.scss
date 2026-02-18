@@ -1,6 +1,14 @@
 --- 
 --- 
 
+@font-face {
+  font-family: "Believe";
+  src: url("{{ '/assets/fonts/believe.woff' | relative_url }}") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "variables";
 @import "base";
 @import "layout";
