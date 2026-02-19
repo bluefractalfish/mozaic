@@ -23,15 +23,16 @@
   position: sticky;
   top: 0;
   display: flex;
+  padding-left: 3px;
   padding-top: 20px;
-  transition: padding-top 0.5s cubic-bezier(.22,1,.36,1);
+  transition: padding-top 1s cubic-bezier(.22,1,.36,1);
 }
 
 .site-header .logo {
     font-family: "brandis";
     font-size: 5rem;
     color: white;
-    transition: font-size 0.5s cubic-bezier(.22,1,.36,1);
+    transition: font-size 1s cubic-bezier(.22,1,.36,1);
   }
 
 .site-header.shrink{
@@ -39,7 +40,7 @@
   }
 
 .site-header.shrink .logo{
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 .nav {
