@@ -22,20 +22,25 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
   display: flex;
-  padding: 2px 20px;
-  transition: all 1s ease;
-  .logo {
-    font-family: "brandis";
-    font-size: 5rem;
-    padding: 0px 40px;
-    text-decoration: none;
-    color: white;
-    transition: all 1s ease;
-  }
+  padding-top: 20px;
+  transition: padding-top 0.5s cubic-bezier(.22,1,.36,1);
 }
 
+.site-header .logo {
+    font-family: "brandis";
+    font-size: 5rem;
+    color: white;
+    transition: font-size 0.5s cubic-bezier(.22,1,.36,1);
+  }
+
+.site-header.shrink{
+    padding-top: 2px;
+  }
+
+.site-header.shrink .logo{
+  font-size: 1rem;
+}
 
 .nav {
   a {
