@@ -27,17 +27,16 @@
   display: flex;
   padding: calc(20px-(10px*var(--t))) 20px;
   transition: all 1s ease;
-
+  .logo {
+    font-family: "brandis";
+    font-size: calc(6rem-(1.6rem*var(--t)));
+    padding: 0px 40px;
+    text-decoration: none;
+    color: white;
+    transition: all 1s ease;
+  }
 }
 
-.logo {
-  font-family: "brandis";
-  font-size: calc(6rem-(1.6rem*var(--t)));
-  padding: 0px 40px;
-  text-decoration: none;
-  color: white;
-  transition: all 1s ease;
-}
 
 .nav {
   a {
