@@ -2,7 +2,7 @@
 
 /* Utility container pattern */
 @mixin container {
-  width: min(#{$container-max}, calc(100% - #{$gutter * 2}));
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
