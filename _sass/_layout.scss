@@ -7,20 +7,6 @@
   margin-right: auto;
 }
 
-/* Header / topbar */
-.topbar {
-  position: sticky;
-  top: 0;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 16px 24px;
-  margin-top: $gutter;
-
-  @include container;
-}
 
 /* Main wrap */
 .wrap {
@@ -33,12 +19,28 @@
   gap: 20px;
 }
 
-.logo {
-  font-family: "brandis";
-  font-size: 6rem;
-  padding: 0px 40px;
-  text-decoration: none;
-  color: white;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  padding: 10px 20px;
+  transition: all 1s ease;
+
+  .logo {
+    font-family: "brandis";
+    font-size: 6rem;
+    padding: 0px 40px;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.site-header.scrolled {
+  padding: 2px 20px;
+  .logo {
+    font-size:1.3rem;
+  }
 }
 
 .nav {
