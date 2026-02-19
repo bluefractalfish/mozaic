@@ -23,24 +23,20 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  --t: 0;
   display: flex;
-  padding: 10px 20px;
+  padding: calc(20px-(10px*var(--t))) 20px;
   transition: all 1s ease;
 
-  .logo {
-    font-family: "brandis";
-    font-size: 6rem;
-    padding: 0px 40px;
-    text-decoration: none;
-    color: white;
-  }
 }
 
-.site-header.scrolled {
-  padding: 2px 20px;
-  .logo {
-    font-size:1.3rem;
-  }
+.logo {
+  font-family: "brandis";
+  font-size: calc(6rem-(1.6rem*var(--t)));
+  padding: 0px 40px;
+  text-decoration: none;
+  color: white;
+  transition: all 1s ease;
 }
 
 .nav {
