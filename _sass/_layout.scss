@@ -64,11 +64,13 @@
   color: rgba(255,255,255,0.5);
   text-decoration: none;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0em;
+  transition: all 400ms cubic-bezier(.22,1,.36,1);
+
 }
 .nav__link:hover{
   color: rgba(255,255,255,1);
-  letter-spacing: 0.5em;
+  letter-spacing: 0.2em;
   font-weight: 900;
 }
 .nav__link.active{
@@ -79,7 +81,7 @@
 .page {
   opacity: 0;
   transform: translateY(6px);
-  transition: opacity 200ms ease, transform 200ms ease;
+  transition: opacity 200ms ease-in, transform 200ms ease-in;
   pointer-events: none;
   height: 0;
   overflow: hidden;
