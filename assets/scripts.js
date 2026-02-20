@@ -29,7 +29,7 @@
 
 const header = document.getElementById("siteHeader");
 if (header) {
-  const ADD_AT = 90;    // shrink after this
+  const ADD_AT = 10;    // shrink after this
   const REMOVE_AT = 40; // grow back only below this
 
   addEventListener("scroll", () => {
