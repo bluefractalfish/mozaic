@@ -61,21 +61,21 @@
   }
 }
 .nav__link{
+  font-size: 1rem;
   color: rgba(255,255,255,0.5);
   text-decoration: none;
   font-weight: 600;
-  letter-spacing: 0em;
   transition: all 400ms cubic-bezier(.22,1,.36,1);
 
 }
 .nav__link:hover{
-  color: rgba(255,255,255,1);
-  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 2px;
   font-weight: 900;
 }
 .nav__link.active{
-  color: rgba(255,255,255,1);
-  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 2px;
   font-weight: 900;
 }
 .page {
@@ -95,5 +95,6 @@
 }
 .pages{
   width: min(600px, calc(100%-50px));
-  margin: 80px auto 80px;
+  padding: 10px 10px;
+  margin: 10px 10px;
 }
