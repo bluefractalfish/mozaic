@@ -48,6 +48,10 @@
   justify-content: center;
 }
 .nav {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  padding: 18px 0;
   a {
     margin-left: 15px;
     text-decoration: none;
@@ -56,4 +60,38 @@
     &:hover { color: white; }
   }
 }
-
+.nav__link{
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+.nav__link:hover{
+  color: rgba(255,255,255,1);
+  letter-spacing: 0.5em;
+  font-weight: 900;
+}
+.nav__link.active{
+  color: rgba(255,255,255,1);
+  letter-spacing: 0.2em;
+  font-weight: 900;
+}
+.page {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+.page.active{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  height: auto;
+  overflow: visible;
+}
+.pages{
+  width: min(600px, calc(100%-50px));
+  margin: 20px auto 80px;
+}
