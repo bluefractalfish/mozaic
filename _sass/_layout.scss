@@ -30,7 +30,6 @@
 
 .site-header .logo {
     font-family: "brandis";
-    padding-top: 10px;
     font-size: 5rem;
     color: rgba(255,255,255,0.5);
     transition: font-size 1s cubic-bezier(.22,1,.36,1);
@@ -41,6 +40,7 @@
   }
 
 .site-header.shrink .logo{
+  padding-top: 10px;
   font-size: 18px;
 }
 
