@@ -15,21 +15,18 @@
       const name = a.dataset.page;
       history.replaceState(null, "", `#${name}`);
       show(name);
+      window.scrollTo({top: 0, behavior: "smooth"});
     });
   });
 
-  const initial = (location.hash || "#home").slice(1);
+  const initial = location.hash.replace("#","") || "home";
   show(initial);
 
-  addEventListener("hashchange", () => {
-    const name = (location.hash || "#home").slice(1);
-    show(name);
-  });
 }) ();
 
 const header = document.getElementById("siteHeader");
 if (header) {
-  const ADD_AT = 10;    // shrink after this
+  const ADD_AT = 60;    // shrink after this
   const REMOVE_AT = 40; // grow back only below this
 
   addEventListener("scroll", () => {
