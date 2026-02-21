@@ -71,6 +71,11 @@
   padding: 20px 0;
   z-index: 1000;
   border-top: solid 2px rgba(255,255,255,0.5);
+  background:
+    radial-gradient(1200px 800px at 10% 20%, rgba(255, 60, 172, .6), transparent 60%),
+    radial-gradient(1000px 700px at 90% 30%, rgba(0, 212, 255, .6), transparent 60%),
+    radial-gradient(1000px 700px at 40% 90%, rgba(109, 94, 252, .6), transparent 60%),
+    linear-gradient(120deg, $bg1, $bg2, $bg3, $bg4);
 
   a {
     margin-left: 15px;
