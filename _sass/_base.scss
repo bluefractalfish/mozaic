@@ -28,7 +28,7 @@ body {
     radial-gradient(1000px 700px at 40% 90%, rgba(109, 94, 252, .6), transparent 60%),
     linear-gradient(120deg, $bg1, $bg2, $bg3, $bg4);
 
-  background-size: 140% 140%;
+  background-size: 110% 110%;
   animation: breathe $breathe-duration ease-in-out infinite;
   filter: saturate(1.2);
 }
