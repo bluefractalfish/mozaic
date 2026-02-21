@@ -13,7 +13,7 @@
     a.addEventListener("click", (e) => {
       e.preventDefault();
       const name = a.dataset.page;
-      history.replaceState(null, "", '#${name}');
+      history.replaceState(null, "", `#${name}`);
       show(name);
     });
   });
