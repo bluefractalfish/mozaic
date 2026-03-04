@@ -20,7 +20,6 @@
 }
 
 .site-header {
-  position: sticky;
   padding-left: 40px;
   top: 0;
   z-index: 100;
@@ -28,8 +27,6 @@
   display: flex;
   align-items: flex-start;
   background-color: none;
-  filter: blur(10px)
-  background: rgba(240,240,240,0.6);
   transition: all 1s cubic-bezier(.22,1,.36,1);
 }
 .site-header.shrink {
