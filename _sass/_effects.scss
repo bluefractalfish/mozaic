@@ -1,0 +1,135 @@
+@import "variables";
+
+// ===== Effect-specific tokens =====
+$glass-1: rgba(255, 255, 255, 0.14);
+$glass-2: rgba(255, 255, 255, 0.10);
+
+
+$breathe-duration: 14s;
+$float-duration-1: 18s;
+$float-duration-2: 22s;
+$float-duration-3: 26s;
+// ===== Ambient background helper =====
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  background:
+    radial-gradient(1200px 800px at 10% 20%, rgba(255, 60, 172, .12), transparent 60%),
+    radial-gradient(1000px 700px at 90% 30%, rgba(0, 212, 255, .12), transparent 60%),
+    radial-gradient(1000px 700px at 40% 90%, rgba(109, 94, 252, .12), transparent 60%),
+    linear-gradient(120deg, $bg1, $bg2, $bg3, $bg4);
+  background-size: 110% 110%;
+  animation: breathe $breathe-duration ease-in-out infinite;
+  filter: saturate(1.15);
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+    background-position: 0% 50%;
+  }
+
+  50% {
+    transform: scale(1.06);
+    background-position: 100% 50%;
+  }
+
+  100% {
+    transform: scale(1);
+    background-position: 0% 50%;
+  }
+}
+
+// ===== Floating blur blobs =====
+.blobs {
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+.blob {
+  position: absolute;
+  width: min(38rem, 52vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: float $float-duration-1 ease-in-out infinite;
+}
+
+.blob:nth-child(1) {
+  left: 8%;
+  top: 10%;
+  background: rgba(255, 60, 172, 0.30);
+}
+
+.blob:nth-child(2) {
+  left: 58%;
+  top: 4%;
+  background: rgba(0, 212, 255, 0.28);
+  animation-duration: $float-duration-2;
+}
+
+.blob:nth-child(3) {
+  left: 28%;
+  top: 58%;
+  background: rgba(109, 94, 252, 0.30);
+  animation-duration: $float-duration-3;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(80px, 60px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+// =====  effect classes =====
+.glass {
+  background: linear-gradient(180deg, $glass-1, $glass-2);
+  border: 1px solid $stroke;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+}
+
+.glass-soft {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: $radius;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.surface {
+  background: $surface-fill;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: $radius;
+  box-shadow: $shadow-soft;
+}
+
+.glow {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 20px 60px rgba(0, 0, 0, 0.25),
+    0 0 80px rgba(255, 255, 255, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg,
+  .blob {
+    animation: none !important;
+  }
+}

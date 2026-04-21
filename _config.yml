@@ -1,10 +1,17 @@
 title: mozaic.
 markdown: kramdown
 
+
 baseurl: ""
 url: "https://mozaic.center"
 
-
+navigation:
+  - title: home 
+    url: / 
+  - title: reading
+    url: /reading/ 
+  - title: about 
+    utl: /about/  
 
 
 

@@ -1,15 +1,10 @@
 --- 
 --- 
 
-@font-face {
-  font-family: "brandis";
-  src: url("{{ '/assets/fonts/brandis.otf' | relative_url }}") format("opentype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 @import "variables";
 @import "base";
+@import "typography";
+@import "elements";
 @import "layout";
-
+@import "effects";
+@import "utilities";

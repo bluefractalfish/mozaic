@@ -1,35 +1,81 @@
+--- 
+--- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
 
+      {% if page.title %}
+        {{ page.title }} · {{ site.title }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
-<body>
-  <div class="bg"></div>
-  <div class="blobs">
-    <div class="blob"></div>
-    <div class="blob"></div>
-    <div class="blob"></div>
-  </div>
 
-  <header class="site-header" id="siteHeader">
-      <div class="logo">
-        mozaic.
+<body>
+    {% assign show_bg = page.show_bg | default: site.show_bg | default: true %}
+    {% assign show_blobs = page.show_blobs | default: site.show_blobs | default: true %}
+
+    {% if show_bg %}
+        <div class="bg" aria-hidden="true"></div> 
+    {% endif %}
+
+    {% if show_blobs %}
+
+      <div class="blobs" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
       </div>
-  </header>
+
+    {% endif %}
+
+    <header>
+        {% if site.title %}
+        <h1>          
+            <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        </h1>
+        {% endif %}
+
+        {% if site.navigation %}
+            <nav aria-label="Primary">
+            {% for item in site.navigation %}
+                {% assign item_url = item.url | relative_url %}
+                {% assign current = false %}
+
+                {% if page.url == item.url %}
+                    {% assign current = true %}
+                {% endif %}
+
+                <a
+                      href="{{ item_url }}"
+                      {% if current %}aria-current="page"{% endif %}
+                >
+                    {{ item.title }}
+                </a>
+                {% endfor %}
+            </nav>
+        {% endif %}
+     </header>
 
   
-  <main class="container">
-    {{ content }}
-  </main>
-  <div style="height:90vh;"></div>
-  <footer class="site-footer">
-  </footer>
-
-<script src="{{ '/assets/scripts.js' | relative_url}}"></script>
-</body>
+    <main>
+        {{ content }}
+    </main>
+    
+    <footer> 
+        {% if site.footer_text %}
+            <p> {{ site.footer_text }}</p> 
+        {% else %}
+            <p>&copy; {{ site.time | date: '%Y' }} mozaic integrative therapies llc. </p>
+        {% endif %}
+    </footer>
+  </body>
 </html>
 

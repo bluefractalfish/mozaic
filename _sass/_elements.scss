@@ -1,0 +1,157 @@
+@import "variables";
+
+// ===== Basic interactive elements =====
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  padding: 0.72rem 1rem;
+  cursor: pointer;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+input[type="reset"]:active {
+  transform: translateY(1px);
+}
+
+input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.56);
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  font-weight: 600;
+}
+
+fieldset {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+}
+
+legend {
+  padding: 0 0.45rem;
+  color: $muted;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+caption {
+  margin-bottom: 0.75rem;
+  color: $muted;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+tbody tr + tr td {
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+section,
+article,
+aside,
+form,
+details,
+figure {
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: $radius-sm;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  transition: box-shadow $transition-slow, 
+              border $transition-slow, 
+              background $transition-slow ;
+}
+
+
+
+details > summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  transition: all 200ms ease;
+}
+details:hover{ 
+  box-shadow: $shadow-soft;
+  background-color: rgba(255,255,255,0.02);
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] > summary {
+  margin-bottom: 0.9rem;
+}
+
+img {
+  height: auto;
+  border-radius: 12px;
+}
+
+figure > img + figcaption {
+  margin-top: 0.75rem;
+}
+
+figcaption {
+  color: $muted;
+  font-size: 0.95rem;
+}

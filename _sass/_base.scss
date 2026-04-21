@@ -1,90 +1,83 @@
 @import "variables";
 
-* { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
-html, body { height: 100%; }
+html,
+body {
+  min-height: 100%;
+}
 
 body {
   margin: 0;
   color: $text;
-  font-family: $font-sans;
+  font-family: $font-mono;
+  line-height: 1.6;
   overflow-x: hidden;
-  padding-bottom: 100px;
-}
-
-
-.bg {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
 
   background:
-    radial-gradient(1200px 800px at 10% 20%, rgba(255, 60, 172, .1), transparent 60%),
-    radial-gradient(1000px 700px at 90% 30%, rgba(0, 212, 255, .1), transparent 60%),
-    radial-gradient(1000px 700px at 40% 90%, rgba(109, 94, 252, .1), transparent 60%),
+    radial-gradient(1200px 800px at 10% 20%, rgba(255, 60, 172, .10), transparent 60%),
+    radial-gradient(1000px 700px at 90% 30%, rgba(0, 212, 255, .10), transparent 60%),
+    radial-gradient(1000px 700px at 40% 90%, rgba(109, 94, 252, .10), transparent 60%),
     linear-gradient(120deg, $bg1, $bg2, $bg3, $bg4);
-
   background-size: 110% 110%;
-  animation: breathe $breathe-duration ease-in-out infinite;
-  filter: saturate(1.2);
+  background-attachment: fixed;
 }
 
-@keyframes breathe {
-  0%   { transform: scale(1);    background-position: 0% 50%; }
-  50%  { transform: scale(1.06); background-position: 100% 50%; }
-  100% { transform: scale(1);    background-position: 0% 50%; }
+img,
+picture,
+svg,
+canvas,
+video {
+  display: block;
+  max-width: 100%;
 }
 
-/* ===== Floating Blobs ===== */
-.blobs {
-  position: fixed;
-  inset: -20%;
-  z-index: -1;
-  filter: blur(40px);
-  opacity: .6;
-  pointer-events: none;
+iframe {
+  max-width: 100%;
 }
 
-.blob {
-  position: absolute;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  animation: float $float-duration-1 ease-in-out infinite;
-
-  &:nth-child(1) {
-    left: 10%;
-    top: 10%;
-    background: rgba(255, 60, 172, .35);
-  }
-
-  &:nth-child(2) {
-    left: 60%;
-    top: 5%;
-    background: rgba(0, 212, 255, .35);
-    animation-duration: $float-duration-2;
-  }
-
-  &:nth-child(3) {
-    left: 30%;
-    top: 60%;
-    background: rgba(109, 94, 252, .35);
-    animation-duration: $float-duration-3;
-  }
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
 }
 
-@keyframes float {
-  0%   { transform: translate(0, 0) scale(1); }
-  50%  { transform: translate(80px, 60px) scale(1.1); }
-  100% { transform: translate(0, 0) scale(1); }
+::selection {
+  background: rgba(255, 255, 255, 0.22);
+  color: white;
 }
 
-/* Accessibility: reduce motion */
+:focus-visible {
+  outline: none;
+  box-shadow: $focus-ring;
+  border-radius: 8px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .bg, .blob { animation: none !important; }
-}
+  html {
+    scroll-behavior: auto;
+  }
 
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

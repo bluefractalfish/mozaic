@@ -1,28 +1,53 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+
 // ===== Theme colors =====
 $bg1: #6d5efc;
-$bg2: #03afff;
-$bg3: #03adea;
-$bg4: #7ddeff;
+$bg2: #033354;
+$bg3: #03224a;
+$bg4: #253346;
 
-// ===== Glass tokens =====
-$glass-1: rgba(255, 255, 255, 0.80);
-$glass-2: rgba(255, 255, 255, 0.86);
-$stroke:  rgba(255, 255, 255, 0.22);
-
-$text:  rgba(255, 255, 255, 0.92);
-$muted: rgba(255, 255, 255, 0.70);
-
-$shadow: 0 20px 60px rgba(0, 0, 0, 0.30);
-$blur: 40px;
-$radius: 18px;
+$text: rgba(255, 255, 255, 0.92);
+$muted: rgba(255, 255, 255, 0.72);
 
 // ===== Layout tokens =====
+$measure: 72rem;
+$measure-text: 68ch;
 $gutter: 20px;
-$font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$section-space: clamp(2rem, 4vw, 4rem);
+$content-space: clamp(1rem, 2vw, 1.5rem);
 
-// ===== Motion =====
-$breathe-duration: 14s;
-$float-duration-1: 18s;
-$float-duration-2: 22s;
-$float-duration-3: 26s;
+// ===== Type =====
+$font-sans: "DM Serif Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-mono: "Manrope";
+$font-accent: "Cormorant Garamond", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
+// ===== Focus =====
+$focus-ring: 0 0 0 3px rgba(255, 255, 255, 0.22);
+// ===== transitions 
+$transition-fast: 180ms ease;
+$transition-base: 260ms cubic-bezier(.22, 1, .36, 1);
+$transition-slow: 500ms cubic-bezier(.22,1,.5,1);
+// ===== radiii === 
+$radius: 18px;
+$radius-sm: 12px;
+$radius-lg: 28px;
+
+// ==== shadows === 
+
+$shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+$shadow-soft: 0 10px 20px rgba(0, 0, 0, 0.18);
+$blur: 20px;
+
+// 
+$stroke: rgba(255, 255, 255, 0.22);
+
+
+// surfaces 
+$surface-fill: rgba(255, 255, 255, 0.10);
+$surface-fill-strong: rgba(255, 255, 255, 0.14);
+$surface-fill-soft: rgba(255, 255, 255, 0.08);
+$surface-hover: rgba(255, 255, 255, 0.18);
