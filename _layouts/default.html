@@ -28,11 +28,21 @@
 
     {% if show_blobs %}
 
-      <div class="blobs" aria-hidden="true">
-        <div class="blob"></div>
-        <div class="blob"></div>
-        <div class="blob"></div>
-      </div>
+          <div class="ambient-blobs" aria-hidden="true">
+             <canvas id="cursor-blob-trail" aria-hidden="true"></canvas>
+            <div class="blob-wrap blob-wrap-a">
+              <div class="blob blob-a"></div>
+            </div>
+
+            <div class="blob-wrap blob-wrap-b">
+              <div class="blob blob-b"></div>
+            </div>
+
+            <div class="blob-wrap blob-wrap-c">
+              <div class="blob blob-c"></div>
+            </div>
+
+          </div>
 
     {% endif %}
 

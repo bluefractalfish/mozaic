@@ -10,6 +10,16 @@ $float-duration-1: 18s;
 $float-duration-2: 22s;
 $float-duration-3: 26s;
 // ===== Ambient background helper =====
+body {
+  background:
+    radial-gradient(1200px 800px at 10% 20%, rgba(255, 60, 172, .10), transparent 60%),
+    radial-gradient(1000px 700px at 90% 30%, rgba(0, 212, 255, .10), transparent 60%),
+    radial-gradient(1000px 700px at 40% 90%, rgba(109, 94, 252, .10), transparent 60%),
+    linear-gradient(120deg, $bg1, $bg2, $bg3, $bg4);
+  background-size: 110% 110%;
+  background-attachment: fixed;
+}
+
 .bg {
   position: fixed;
   inset: 0;
@@ -43,43 +53,132 @@ $float-duration-3: 26s;
   }
 }
 
-// ===== Floating blur blobs =====
-.blobs {
+// ===== BLOBJECTS =====
+
+:root {
+  --blob-blur: 90vw;
+  --blob-opacity: 0.5;
+
+  --blob-pink: 255, 90, 160;
+  --blob-orange: 255, 130, 80;
+  --blob-blue: 80, 140, 255;
+  --blob-green: 90, 220, 170;
+}
+
+.ambient-blobs {
   position: fixed;
-  inset: -20%;
-  z-index: -1;
+  inset: 0;
+  //z-index: -1;
+  overflow: hidden;
   pointer-events: none;
-  filter: blur(40px);
-  opacity: 0.6;
+  background: transparent;
+}
+
+#cursor-blob-trail {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  filter: blur(72px);
+  mix-blend-mode: difference;
+  opacity: 0.24;
+}
+
+
+.blob-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  will-change: auto;
 }
 
 .blob {
   position: absolute;
-  width: min(38rem, 52vw);
+  width: 90vw;
   aspect-ratio: 1;
-  border-radius: 50%;
-  animation: float $float-duration-1 ease-in-out infinite;
+  border-radius: 999px;
+  filter: blur(var(--blob-blur));
+  opacity: var(--blob-opacity);
+  pointer-events: none;
+  mix-blend-mode: screen;
 }
 
-.blob:nth-child(1) {
-  left: 8%;
-  top: 10%;
-  background: rgba(255, 60, 172, 0.30);
+.blob-a {
+  top: -14vmax;
+  left: -10vmax;
+  background:
+    radial-gradient(circle at 35% 35%,
+      rgba(var(--blob-pink), 0.9),
+      rgba(var(--blob-orange), 0.45) 42%,
+      transparent 70%);
+  animation: blob-drift-a 10s ease-in-out infinite alternate;
 }
 
-.blob:nth-child(2) {
-  left: 58%;
-  top: 4%;
-  background: rgba(0, 212, 255, 0.28);
-  animation-duration: $float-duration-2;
+.blob-b {
+  top: 22vmax;
+  right: -16vmax;
+  background:
+    radial-gradient(circle at 40% 40%,
+      rgba(var(--blob-blue), 0.85),
+      rgba(var(--blob-green), 0.35) 46%,
+      transparent 72%);
+  animation: blob-drift-b 12s ease-in-out infinite alternate;
 }
 
-.blob:nth-child(3) {
-  left: 28%;
-  top: 58%;
-  background: rgba(109, 94, 252, 0.30);
-  animation-duration: $float-duration-3;
+.blob-c {
+  bottom: -20vmax;
+  left: 25vw;
+  background:
+    radial-gradient(circle at 45% 45%,
+      rgba(var(--blob-orange), 0.65),
+      rgba(var(--blob-pink), 0.35) 50%,
+      transparent 74%);
+  animation: blob-drift-c 26s ease-in-out infinite alternate;
 }
+
+
+@keyframes blob-drift-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(18vw, 14vh, 0) scale(1.18);
+  }
+}
+
+@keyframes blob-drift-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+
+  to {
+    transform: translate3d(-20vw, -8vh, 0) scale(0.9);
+  }
+}
+
+@keyframes blob-drift-c {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.9);
+  }
+
+  to {
+    transform: translate3d(10vw, -18vh, 0) scale(1.25);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none;
+  }
+
+  .blob-cursor {
+    display: none;
+  }
+}
+
 
 @keyframes float {
   0% {
@@ -94,6 +193,7 @@ $float-duration-3: 26s;
     transform: translate(0, 0) scale(1);
   }
 }
+
 
 // =====  effect classes =====
 .glass {
@@ -132,4 +232,78 @@ $float-duration-3: 26s;
   .blob {
     animation: none !important;
   }
+}
+
+// SCROLL EFFECTS 
+
+.scroll-card {
+  transform:
+    translateY(var(--scroll-y, 0px))
+    rotateX(var(--scroll-tilt, 0deg));
+  transition: box-shadow 200ms ease;
+  will-change: transform;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(2rem) scale(0.98);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease,
+    box-shadow 700ms ease;
+  transition-delay: $delay;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.program-card.reveal.is-visible {
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.1);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .scroll-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+// CURSOR TRAILS 
+
+.cursor-trail {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cursor-trail span {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: calc(18rem - var(--i, 0) * 1.8rem);
+  height: calc(18rem - var(--i, 0) * 1.8rem);
+  border-radius: 999px;
+
+  background: radial-gradient(
+    circle,
+    color-mix(in oklab, $accent, transparent 25%),
+    transparent 70%
+  );
+
+  filter: blur(36px);
+  opacity: calc(0.45 - var(--i, 0) * 0.06);
+
+  transform: translate3d(
+    calc(var(--x, 50vw) - 50%),
+    calc(var(--y, 50vh) - 50%),
+    0
+  );
 }

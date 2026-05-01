@@ -22,8 +22,8 @@ body > header {
 }
 
 body > main {
-  padding-top: clamp(1rem, 3vw, 2rem);
-  padding-bottom: clamp(4rem, 8vw, 7rem);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 body > footer {
@@ -48,7 +48,10 @@ main > section + article {
   margin-top: $section-space;
 }
 
-// ===== Header / nav defaults =====
+main > section {
+  padding-block: $space-xl;
+}
+
 header {
   display: grid;
   gap: 1rem;
@@ -98,7 +101,17 @@ footer {
   display: block;
 }
 
-// =====  longform readability =====
+main, 
+.site-page, 
+.page, 
+header, 
+footer {
+  position: relative; 
+  z-index: 1;
+}
+
+// longform readability =====
+
 .prose {
   max-width: $measure-text;
 }
@@ -106,3 +119,68 @@ footer {
 .prose > * + * {
   margin-top: 1rem;
 }
+
+
+// SITE-MAIN =======================
+
+.site-main {
+  overflow: clip;
+}
+
+// SECTIONS / HERO =================== 
+
+.section {
+  max-width: $page-max;
+  margin-inline: auto;
+}
+
+.hero {
+  min-height: 82svh;
+  display: grid;
+  align-content: center;
+  max-width: $page-max;
+  margin-inline: auto;
+  padding-inline: $space-md;
+}
+
+// SPLIT ==============================
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: $space-lg;
+  align-items: start;
+}
+
+// GRIDS ==============================
+
+.program-grid,
+.step-grid,
+.care-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: $space-md;
+}
+
+.program-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+.step-grid,
+.care-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+
+// MEDIA ==========================================
+
+@media (max-width: 760px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    max-width: 9ch;
+  }
+}
+

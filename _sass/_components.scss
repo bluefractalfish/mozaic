@@ -1,0 +1,89 @@
+
+// ACTIONS/PROGRAM CARDS ====== 
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.actions a,
+.program-card a,
+.cta a {
+  display: inline-flex;
+  width: fit-content;
+  border: 1px solid $border;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+}
+
+.program-card,
+.care-card {
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 1.25rem;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--surface) 92%, white 8%),
+      color-mix(in srgb, var(--surface) 96%, black 4%)
+    );
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.06);
+}
+
+
+.program-card ul {
+  padding-left: 1.1rem;
+}
+
+
+.step-card {
+  border-top: 1px solid $border;
+  padding-top: 1rem;
+}
+
+
+.step-card span {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin-bottom: 2rem;
+}
+
+.quote-band {
+  padding-block: 8rem;
+  padding-inline: $space-md;
+  border-block: 1px solid $border;
+}
+
+.quote-band blockquote {
+  max-width: 56rem;
+  margin-inline: auto;
+  font-size: clamp(1.6rem, 4vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.quote-band cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  opacity: 0.65;
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta p {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.cta .actions {
+  justify-content: center;
+}
+
+
+

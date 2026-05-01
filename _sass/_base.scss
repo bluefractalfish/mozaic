@@ -21,14 +21,8 @@ body {
   font-family: $font-mono;
   line-height: 1.6;
   overflow-x: hidden;
-
-  background:
-    radial-gradient(1200px 800px at 10% 20%, rgba(255, 60, 172, .10), transparent 60%),
-    radial-gradient(1000px 700px at 90% 30%, rgba(0, 212, 255, .10), transparent 60%),
-    radial-gradient(1000px 700px at 40% 90%, rgba(109, 94, 252, .10), transparent 60%),
-    linear-gradient(120deg, $bg1, $bg2, $bg3, $bg4);
-  background-size: 110% 110%;
-  background-attachment: fixed;
+  position: relative; 
+  isolation: isolate; 
 }
 
 img,
@@ -50,6 +44,10 @@ select,
 textarea {
   font: inherit;
   color: inherit;
+}
+
+main > section {
+  padding-block: $space-xl;
 }
 
 ::selection {
@@ -81,3 +79,5 @@ textarea {
     scroll-behavior: auto !important;
   }
 }
+
+
