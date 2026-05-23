@@ -240,7 +240,7 @@ body {
   transform:
     translateY(var(--scroll-y, 0px))
     rotateX(var(--scroll-tilt, 0deg));
-  transition: box-shadow 200ms ease;
+  transition: box-shadow 100ms ease;
   will-change: transform;
 }
 
@@ -248,9 +248,9 @@ body {
   opacity: 0;
   transform: translateY(2rem) scale(0.98);
   transition:
-    opacity 700ms ease,
-    transform 700ms ease,
-    box-shadow 700ms ease;
+    opacity 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
   transition-delay: $delay;
 }
 
